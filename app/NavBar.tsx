@@ -1,6 +1,6 @@
 "use client";
 
-import { Skeleton } from '@/app/components';
+import { Skeleton } from "@/app/components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -67,7 +67,11 @@ const AuthStatus = () => {
   if (status === "loading") return <Skeleton width="3rem" />;
 
   if (status === "unauthenticated")
-    return <Link className="nav-link" href="/api/auth/signin">Login</Link>;
+    return (
+      <Link className="nav-link" href="/api/auth/signin">
+        Login
+      </Link>
+    );
 
   return (
     <Box>
@@ -79,6 +83,7 @@ const AuthStatus = () => {
             size="2"
             radius="full"
             className="cursor-pointer"
+            referrerPolicy="no-referrer"
           />
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
